@@ -1,0 +1,12 @@
+{
+    "name": "ashraafdev/php-paginator",
+    "description": "a library that will help you to handle pagination",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "AshraafDev\\PhpPaginator\\": "src/",
+            "Logs\\": "logs/"
+        }
+    },
+    "require": {}
+}
