@@ -25,7 +25,7 @@ class Paginator
 
     public function getData(): array
     {
-        return array_slice($this->data, ($this->currentPage - 1) * $this->countPerPage, $this->countPerPage);
+        return array_slice($this->data, ($this->currentPage) * $this->countPerPage, $this->countPerPage);
     }
 
     public function getLinks(): array
@@ -41,5 +41,21 @@ class Paginator
             else if ($links[count($links) - 1] == $range[count($range) - 2]) array_push($links, $range[count($range) - 1]);
         }
         return isset($links) ? $links : $range;
+    }
+
+    public function middleware(): array
+    {
+        return [
+            'host' => $_SERVER['HTTP_HOST'],
+            'path' => explode('?', $_REQUEST['REQUEST_URI'])[0],
+            'page' => isset($_GET['page']) ? $_GET['page'] : 1, 
+        ];
+    }
+
+    public function launch(): array
+    {
+        return [
+
+        ];
     }
 }
