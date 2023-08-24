@@ -5,8 +5,14 @@
     "autoload": {
         "psr-4": {
             "AshraafDev\\PhpPaginator\\": "src/",
-            "Logs\\": "logs/"
+            "Logs\\": "logs/",
+            "Tests\\": "tests/"
         }
     },
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "require": {
+        "symfony/var-dumper": "^6.3"
+    }
 }
